@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            min-height: 100vh;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+        }
+
+        @media (max-width: 968px) {
+            .container {
+                background-image: url("bg-mobile.png");
+            }
+
+            .qrCode {
+                display: none;
+            }
+
+            .card {
+                margin-top: 20px;
+            }
+
+            .contentColumn {
+                margin: auto;
+                padding: 20px;
+            }
+
+            .desktop {
+                display: none;
+            }
+
+            .value {
+                font-size: 16px;
+            }
+
+            .photo {
+                height: 82px;
+                flex-basis: 82px;
+                border-radius: 4px;
+                overflow: hidden;
+                margin: 5px;
+            }
+
+            .photosContainer {
+                margin: -5px;
+            }
+        }
+
+        @media (min-width: 968px) {
+            .container {
+                background-image: url("bg-desktop.jpg");
+            }
+
+
+            .card {
+                margin-top: 40px;
+            }
+
+            .column {
+                margin-left: 60px;
+            }
+
+            .contentColumn {
+                margin-left: 50%;
+                width: 496px;
+            }
+
+            .mobile {
+                display: none !important;
+            }
+
+            .photo {
+                height: 65px;
+                width: 65px;
+                border-radius: 4px;
+                overflow: hidden;
+                margin: 4px;
+            }
+
+
+            .cardRow {
+                display: flex;
+                align-items: flex-start;
+            }
+
+            .value {
+                font-size: 14px;
+            }
+
+            .photosContainer {
+                margin: -5px;
+            }
+
+
+        }
+
+        .contentColumn {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo {
+            object-fit: cover;
+        }
+
+        .headerSection {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .header {
+            font-size: 32px;
+            line-height: 48px;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .subheader {
+            margin: 0;
+            text-align: center;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .card {
+            width: 100%;
+            box-shadow: 0 4px 43px -20px rgba(5, 7, 17, 0.2);
+            border-radius: 12px;
+            background-color: #FFFFFF;
+            padding: 34px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .qrCode {
+            max-width: 164px;
+            height: auto;
+        }
+
+
+        .column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .label {
+            font-size: 12px;
+            color: #737EA8;
+            line-height: 14px;
+            padding-bottom: 4px;
+        }
+
+        .value {
+            line-height: 20px;
+            color: #213174;
+            font-weight: 500;
+        }
+
+        .amount {
+            font-size: 24px;
+            line-height: 28px;
+        }
+
+        .mobile-amount {
+            font-size: 34px;
+            text-align: center;
+            line-height: 40px;
+            margin-bottom: 16px;
+        }
+
+        .pb-2 {
+            padding-bottom: 16px;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .clubImage {
+            width: 32px;
+            height: 32px;
+        }
+
+        .align-center {
+            align-items: center;
+        }
+
+        .pl-1 {
+            padding-left: 8px;
+        }
+
+
+        .photosContainer {
+            flex-wrap: wrap;
+        }
+
+        .button-container {
+            margin-top: 32px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .button {
+            padding: 14px 50px;
+            border-radius: 6px;
+            background-color: #3054E5;
+            color: #fff;
+            appearance: none;
+            border: none;
+            outline: none;
+            font-weight: 500;
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-top: 10px;
+            align-items: center;
+        }
+
+        .footer-text {
+            width: 241px;
+            color: #ffffff;
+            text-align: center;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .footer-buttons {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 8px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="contentColumn">
+        <div class="headerSection">
+            <img alt="Tifo" src="Logo.svg"/>
+            <h1 class="desktop header">Scan QR Code to make a payment</h1>
+            <h3 class="desktop subheader">
+                You can scan the QR code below using the Camera application on your phone or with the
+                Tifo Scan QR feature.
+            </h3>
+            <h2 class="mobile header">
+                QR Payment
+            </h2>
+        </div>
+        <div class="card">
+            <div class="cardRow pb-2">
+                <img alt="QR code" src="demoQRcode.jpeg" class="qrCode">
+                <div class="column">
+                    <div class="desktop pb-2">
+                        <div class="label">
+                            Amount
+                        </div>
+                        <div class="value amount">
+                            € 2,200.00
+                        </div>
+                    </div>
+                    <div class="mobile value mobile-amount">
+                        € 2,200.00
+                    </div>
+                    <div class="pb-2">
+                        <div class="label">
+                            Purpose
+                        </div>
+                        <div class="value">
+                            Pay for sneakers Nike 270 React
+                        </div>
+                    </div>
+                    <div class="label">
+                        Club
+                    </div>
+                    <div class="row align-center">
+                        <img class="clubImage" alt="Club" src="demoClub.png"/>
+                        <div class="value pl-1">
+                            Club tennis De La Salut
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="label">
+                Photos
+            </div>
+            <div class="photosContainer row">
+                <img src="demoPhoto.jpg" alt="Photo" class="photo"/>
+                <img src="demoPhoto.jpg" alt="Photo" class="photo"/>
+                <img src="demoPhoto.jpg" alt="Photo" class="photo"/>
+                <img src="demoPhoto.jpg" alt="Photo" class="photo"/>
+                <img src="demoPhoto.jpg" alt="Photo" class="photo"/>
+                <img src="demoPhoto.jpg" alt="Photo" class="photo"/>
+            </div>
+            <div class="mobile button-container">
+                <button class="button">
+                    Open in TIFO
+                </button>
+            </div>
+        </div>
+        <div class="footer mobile">
+            <div class="footer-text">
+                To pay download Tifo app on your mobile phone.
+            </div>
+            <div class="footer-buttons">
+                <img alt="Download on The App Store" src="appStore.svg">
+                <img alt="Get it on Google Play Store" src="playStore.svg">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
