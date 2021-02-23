@@ -39,6 +39,7 @@
             .contentColumn {
                 margin: auto;
                 padding: 20px;
+                width: 100%;
             }
 
             .desktop {
@@ -50,10 +51,7 @@
             }
 
             .photo {
-                height: 82px;
-                flex-basis: 82px;
-                border-radius: 4px;
-                overflow: hidden;
+                flex-basis: calc(33% - 10px);
                 margin: 5px;
             }
 
@@ -88,8 +86,6 @@
             .photo {
                 height: 65px;
                 width: 65px;
-                border-radius: 4px;
-                overflow: hidden;
                 margin: 4px;
             }
 
@@ -119,7 +115,8 @@
         }
 
         .photo {
-            object-fit: cover;
+            border-radius: 4px;
+            overflow: hidden;
         }
 
         .headerSection {
@@ -212,7 +209,6 @@
             padding-left: 8px;
         }
 
-
         .photosContainer {
             flex-wrap: wrap;
         }
@@ -255,6 +251,19 @@
             justify-content: space-around;
             width: 100%;
             margin-top: 8px;
+        }
+
+        .photoWrapper {
+            height: 0;
+            padding-bottom: 100%;
+            position: relative;
+        }
+
+        .photoWrapper img {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
         }
 
     </style>
@@ -311,12 +320,36 @@
                 Photos
             </div>
             <div class="photosContainer row">
-                <img src="demoPhoto.jpg" alt="Photo" class="photo"/>
-                <img src="demoPhoto.jpg" alt="Photo" class="photo"/>
-                <img src="demoPhoto.jpg" alt="Photo" class="photo"/>
-                <img src="demoPhoto.jpg" alt="Photo" class="photo"/>
-                <img src="demoPhoto.jpg" alt="Photo" class="photo"/>
-                <img src="demoPhoto.jpg" alt="Photo" class="photo"/>
+                <div class="photo">
+                    <div class="photoWrapper">
+                        <img src="demoPhoto.jpg" alt="Photo"/>
+                    </div>
+                </div>
+                <div class="photo">
+                    <div class="photoWrapper">
+                        <img src="demoClub.png" alt="Photo"/>
+                    </div>
+                </div>
+                <div class="photo">
+                    <div class="photoWrapper">
+                        <img src="demoPhoto.jpg" alt="Photo"/>
+                    </div>
+                </div>
+                <div class="photo">
+                    <div class="photoWrapper">
+                        <img src="demoQRcode.jpeg" alt="Photo"/>
+                    </div>
+                </div>
+                <div class="photo">
+                    <div class="photoWrapper">
+                        <img src="demoPhoto.jpg" alt="Photo"/>
+                    </div>
+                </div>
+                <div class="photo">
+                    <div class="photoWrapper">
+                        <img src="test.jpg" alt="Photo"/>
+                    </div>
+                </div>
             </div>
             <div class="mobile button-container">
                 <button class="button">
